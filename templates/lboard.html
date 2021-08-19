@@ -10,7 +10,7 @@
     <link href="{% static 'navbar.css' %}" rel="stylesheet">
     <link href="{% static 'footer.css' %}" rel="stylesheet">
     <link href="{% static 'lboard.css' %}" rel="stylesheet">
-
+    <link href="{% static 'background.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/nes.css@latest/css/nes.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gill+Sans&amp;display=sans-serif" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -21,6 +21,8 @@
 <body class="bodypad" style="background-color: black;">
   <div class="container">
     <div class="center jumbotron" style="background: rgba(1,1,1,0.6);">
+      <h1 style="color: white !important;text-align: center;">LEADERBOARD</h1>
+      <br><br>
       <div class="top3">
         {% for player in players %}
         {% if forloop.counter < 4 %}
@@ -90,7 +92,7 @@
           {% for player in players %}
           {% if forloop.counter > 3 %}
           <div class="item">
-            <div class="pos" style="font-size: 2rem;margin-left: -5rem;">
+            <div class="pos" style="font-size: 2rem;margin-left: -3.5rem;">
               {{forloop.counter}}
             </div>
             <div class="pics" style="background-image: url(&#39;{{player.image}};)"></div>
