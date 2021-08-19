@@ -47,7 +47,9 @@ class option(models.Model):
         upload_to="images", default="https://source.unsplash.com/random")
 
     def __str__(self):
-        return self.text
+        if self.end:
+            return f"{self.text} (end)"
+        return f"{self.text} ({self.next_sit})"
 
 
 class Situation(models.Model):
