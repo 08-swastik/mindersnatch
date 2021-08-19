@@ -356,7 +356,7 @@ def graph(request):
 @login_required(login_url="/")
 def graphy(request):
     player = Player.objects.get(user=request.user)
-    if player.completed_or_dead == False:
+    if player.completed_or_dead == False and not request.user.is_staff:
         return redirect("/")
     visited = player.visited_nodes.split(" ")[0: -1]
     graph = graphviz.Digraph(format='svg')
