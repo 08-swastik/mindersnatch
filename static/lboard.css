@@ -251,6 +251,18 @@ div.score{
 div.center.jumbotron{
   position: fixed !important;
 }
+.row{
+  color: white;
+  display: inline!important;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+p.levels{
+  margin: 0px 20px !important;
+  /* margin-right: 100px !important; */
+}
 
 @media screen and (max-width: 700px)
 {

@@ -78,6 +78,14 @@
         {% endif  %}
         {% endfor %}
         </div>
+        <!-- <div class="row">
+          <p>level</p>
+          <p>penalty</p>
+        </div> -->
+        <!-- <div style="overflow: hidden;">
+          <p class="levels" style="float: right;color:white;font-weight:bold;font-size: 2rem;">Penalty</p>
+          <p class="penaltys" style="float: right;color:white;font-weight:bold;font-size: 2rem;">Level</p>
+      </div> -->
         <div class="list">
           {% for player in players %}
           {% if forloop.counter > 3 %}
@@ -90,10 +98,10 @@
             {{player.name}}
             </div>
             <div class="score" style="font-size: 2rem;">
-              {{player.score}} penalty
+              {{player.level}} level
             </div>
             <div class="score" style="font-size: 2rem;">
-              {{player.level}} level
+              {{player.score}} penalty
             </div>
           </div>
           {% endif %}
