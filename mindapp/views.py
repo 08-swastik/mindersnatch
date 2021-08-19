@@ -55,12 +55,16 @@ def save_profile(backend, user, response, *args, **kwargs):
 
     elif backend.name == 'github':
         profile = user
+        print(response.get('login'))
         try:
             player = Player.objects.get(user=profile)
         except:
             player = Player(user=profile)
             player.timestamp = t.now()
-            player.name = response.get('name')
+            if response.get('name') is not None:
+                player.name = response.get('name')
+            else:
+                player.name = response.get('login')
             player.image = response.get('avatar_url')
             player.save()
 
