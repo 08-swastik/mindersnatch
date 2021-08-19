@@ -4,13 +4,15 @@
     src: url("../static/zekton_rg.ttf");
   }
 body {
-    /* background-color: black!important; */
+    background-color: black!important;
     background-image: url("https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg") !important;
     font-family: "Zekton" !important;
+    background-position: center !important;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0;
     margin: 0;
+    overflow-y: scroll;
   }
 body, html {
   min-height: 100vh !important;
@@ -50,6 +52,7 @@ body, html {
   font-family: "Zekton", sans-serif;
 }
 div.center.jumbotron{
+  /* width: 50% !important; */
   margin-top: 50px !important;
   height: 80vh;
   overflow-y: scroll;
