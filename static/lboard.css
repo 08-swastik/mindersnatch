@@ -252,8 +252,12 @@ div.center.jumbotron{
   position: fixed !important;
 }
 
-@media screen and (max-width: 500px)
+@media screen and (max-width: 700px)
 {
+  div.pos{
+    margin-left: -1.4rem !important;
+    font-size: 1.4rem !important;
+  }
   .list .item .pics {
     width: 5rem !important;
     height: 5rem !important;
