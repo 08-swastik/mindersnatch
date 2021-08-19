@@ -1,25 +1,57 @@
 {% extends "base.html" %}
 {% load static %}
 {% block stylesheet %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="{% static 'index.css' %}">
-<link rel="stylesheet" href="{% static 'end.css' %}">
+<link rel="stylesheet" href="{% static 'a.css' %}">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 {% endblock %}
 
 {% block content %}
-<div class="container">
-	<h1 class="ml11">
-		<span class="text-wrapper">
-    <span class="line line1"></span>
-   <p class="over">Game Over</p>
-        <br><br>
-    </h1>
-    <span class="nes-pointer" style="text-decoration: none; color: white !important;text-align: center;margin-bottom: 50px;">MESSAGE- {{message}}</span>
-  
-	<div class="profile-container">
-    <a href="{% url 'situation' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">PLAY AGAIN</a>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
 
-	</div>
+<div class="container">
+    <!-- {% include "components/svg.desktop.html" %}
+    {% include "components/svg.mobile.html" %} -->
+    <!-- {% if frozen == True %}
+        <p style="width: 70%;margin: auto;text-align: center;border: 2px solid red;color: seashell;" id="breathing-button">
+            The Event has ended ,The Leaderboard has been frozen <br>However you can still explore the game:)
+        </p>
+    {% endif %} -->
+    <!-- <h1 class="ml11" style="font-size: 3rem;">
+        <span class="text-wrapper">
+            <span class="line line1"></span>
+            <span class="letters">Game Over</span>
+        </span>
+    </h1> -->
+    <h1 style="font-size: 6rem !important; color: azure; text-align: center;">
+        Game Over
+    </h1>
+
+    <div class="row">
+        <a type="button" href="{% url 'situation' %}" class="social-button nes-btn is-error" data-inline="true">
+            <!-- <i class="nes-icon github is-small"></i> Login with Github -->
+            Play Again
+        </a>
+    </div>
+    <br>
 </div>
 
 {% endblock %}
