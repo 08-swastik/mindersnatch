@@ -1,11 +1,14 @@
+@font-face {
+  font-family: Zekton;
+  src: url("../static/zekton_rg.ttf");
+}
 body {
-  background: black !important;
-  font-family: 'Press Start 2P';
+  font-family: Zekton;
 }
 
 .profile-loading {
   display: flex;
-  max-width: 500px;
+  max-width: 700px;
   background: transparent;
   justify-content: center;
   align-items: center;
@@ -18,19 +21,27 @@ body {
   padding-bottom: 20px;
 }
 
+
 h4 {
   font-size: 30px;
-  color: grey;
+  color: white !important;
+  margin: 50px 50px !important;
+  background: rgba(1,1,1,0.8) !important;
+  padding : 30px 30px !important;
+  border-radius: 15px;
 }
 
 p {
-  color: #8C9093;
+  color: white !important;
 }
 
 .profile-loading__texts {
+ margin: 0px 0px !important;
+  min-height: 150px !important;
   position: relative;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
 }
+

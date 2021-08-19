@@ -11,6 +11,7 @@ html{
 }
 
 
+
 /* .social-btns .btn,
 .social-btns .btn:before,
 .social-btns .btn .fa {
@@ -299,13 +300,16 @@ a.social-button{
   margin: 50px auto;
   -webkit-animation: breathing 5s ease-out infinite normal;
   animation: breathing 5s ease-out infinite normal;
-  font-size: 16px;
+  font-size: 20px;
   color: seashell;
   -webkit-font-smoothing: antialiased;
   border-radius: 2px;
   text-align: center;
   width: 70%;
-  border: 2px solid red;
+  margin-bottom: 100px;
+  border: none !important;
+  border-radius: 10px !important;
+  background: rgba(1,1,1,0.6) !important;
 }
 
 @-webkit-keyframes breathing {
@@ -369,4 +373,8 @@ i.fa.fa-github::before{
     width: 250px !important;
     display: flex !important;
   }
+}
+
+span.letter{
+  margin-top: 25px !important;
 }

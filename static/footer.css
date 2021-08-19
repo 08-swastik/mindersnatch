@@ -17,6 +17,7 @@ div.footer {
   font-size: 1.4rem;
   color: white;
   text-align: center;
+  bottom: 0% !important;
   /* font-family: "Press Start 2P", cursive; */
   font-family: "Zekton";
 }

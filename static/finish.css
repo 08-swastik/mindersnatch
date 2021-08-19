@@ -4,6 +4,9 @@ body {
     background-image: url(https://wallpaperaccess.com/download/dark-geometric-desktop-1198741);
     background-position: center;
   }
+  h1{
+    font-size: 30px !important;
+  }
   .Message{
       width: 70%;
       margin: auto;
@@ -36,6 +39,9 @@ body {
     margin: auto;
   }
   
+  .nes-container{
+    background: rgba(1,1,1,0.4) !important;
+  }
   .bounce {
     position: absolute;
     bottom: 0%;

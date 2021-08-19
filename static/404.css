@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
+@font-face {
+  font-family: Zekton;
+  src: url("../static/zekton_rg.ttf");
+}
 
 html,
 body{
   margin: 0px;
   overflow: hidden;
+  text-align: center !important;
+  font-family: Zekton !important;
 }
-
 div{
   position: absolute;
   top: 0%;
@@ -174,3 +179,14 @@ div{
     filter: hue-rotate(0deg);
   }
 }
+
+.sorry {
+  position: absolute;
+  top: 70% !important;
+  text-align: center;
+  font-size: 30px;
+  color: white !important;
+  background: transparent;
+
+}
+
