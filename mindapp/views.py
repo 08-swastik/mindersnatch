@@ -146,6 +146,8 @@ def ans_post(request, cur_level, tot_level):
                 else:
                     messg = Situation.objects.get(
                         situation_no=player.current_sitn).text
+                    player.completed_or_dead = True
+                    player.save()
                     return render(request, "finish.html", {'user': player, 'messg': messg})
         else:
             ans = ""
@@ -180,6 +182,8 @@ def ans_post(request, cur_level, tot_level):
                 else:
                     messg = Situation.objects.get(
                         situation_no=player.current_sitn).text
+                    player.completed_or_dead = True
+                    player.save()
                     return render(request, "finish.html", {'user': player, 'messg': messg})
             else:
                 return render(request, 'subjective_level.html', {'user': player, 'sitn': past_sitn, 'timepassed': timer[0].timepassed(), 'status': 302, })
