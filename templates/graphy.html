@@ -5,24 +5,27 @@
         <meta charset="utf-8">
         <title>Graph</title>
         <link rel="stylesheet" href="{% static 'navbar.css' %}">
-
+        <link href="{% static 'background.css' %}" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://unpkg.com/nes.css@latest/css/nes.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
+        <!-- <link href="{% static 'background.css' %}" rel="stylesheet"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.5.0/dialog-polyfill.min.css">
 
     </head>
     <style>
-        .bg-image{
-            background-image: url('../static/images/bgs.png');
-            background-repeat: no-repeat;
-            background-size: cover;
+        body{
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0;
+            margin: 0;
+            background-attachment: fixed;
             min-height: 100vh;
-            
+            min-width: 100vh;
         }
+        
         @font-face {
             font-family: Zekton;
             src: url("../static/zekton_rg.ttf");
@@ -33,16 +36,20 @@
         polygon{
             fill: transparent;
         }
-        .containers{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
+       
         .jumbotron{
-            background: rgba(1,1,1,0.7);
+            
+            margin-top: 200px;
+            margin-left: 10vw !important;
+            margin-right: 10vw !important;
+            background: rgba(1, 1, 1, 0.5);
+            max-height: fit-content;
+            max-width: 80vw;
+            overflow-x: auto !important;
+            
         }
+
+       
 
         @media screen and (max-width: 500px) {
             .navbar-icon {
@@ -73,7 +80,7 @@
     </style>
     {% include "components/navbar.html" %}
     <body>
-        <div class="bg-image"></div>
+        <!-- <div class="bg-image"></div> -->
             <div class="containers">
                 <div class="jumbotron">
                     {{ graph | safe }}
