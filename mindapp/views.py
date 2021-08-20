@@ -77,7 +77,6 @@ def save_profile(backend, user, response, *args, **kwargs):
             player.name = response.get(
                 'first_name')+" "+response.get('last_name')
             player.email = response.get('email')
-            # print(response)
             player.image = "http://graph.facebook.com/%s/picture?type=large" \
                 % response["id"]
             player.timestamp = t.now()
@@ -193,8 +192,6 @@ def ans_nonpost(request):
     try:
         player = Player.objects.get(user=request.user)
         sitn = Situation.objects.get(situation_no=player.current_sitn)
-        print("visited !!!!")
-        print(sitn.situation_no)
         player.visited_nodes += f"{sitn.situation_no} "
         player.save()
 
@@ -204,8 +201,6 @@ def ans_nonpost(request):
             return render(request, "subjective_level.html", {'user': player, 'sitn': sitn, 'timepassed': timer[0].timepassed()})
         else:
             options = sitn.options.all()
-            for option in options:
-                print(option.text)
             return render(request, "level.html", {'user': player, 'sitn': sitn, 'options': options})
     except Exception as e:
         print(e)
@@ -365,6 +360,9 @@ def graphy(request):
         if situation.sub == True:
             j=str(situation.situation_no)
             i=str(situation.next_sitn)
+            graph.node(i,color='white', fontcolor='black',fillcolor='white', style='filled')
+            graph.node(j,color='white', fontcolor='black',fillcolor='white', style='filled')
+
             if i in visited and j in visited:
                 graph.edge(j,i,color='red')
             else:
@@ -372,16 +370,17 @@ def graphy(request):
         else:
             options = situation.options.all()
             for option in options:
-                print(option.text, option.end)
                 if not option.end:
                     i=str(situation.situation_no)
                     j=str(option.next_sit)
+                    graph.node(i,color='white', fontcolor='black',fillcolor='white', style='filled')
+                    graph.node(j,color='white', fontcolor='black',fillcolor='white', style='filled')
+
                     if i in visited and j in visited:
                         graph.edge(i,j,color='red')
                     else:
                         graph.edge(i,j,color='#A9EAA9')
         graph.node(str(situation.situation_no),color='white', fontcolor='black',fillcolor='white', style='filled')
-    print(visited)
     for v in visited:
         sitn = Situation.objects.get(situation_no=v)
         text = sitn.text
