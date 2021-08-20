@@ -36,7 +36,6 @@
         polygon{
             fill: transparent;
         }
-       
         .jumbotron{
             
             margin-top: 200px;
@@ -46,15 +45,28 @@
             max-height: fit-content;
             max-width: 80vw;
             overflow-x: auto !important;
+
+        }
+
+        @media screen and (max-width: 700px){
+            svg{
+                width: 70vw !important;
+            }
+            .jumbotron{
             
+                margin-top: 200px;
+                margin-left: 10vw !important;
+                margin-right: 10vw !important;
+                background: rgba(1, 1, 1, 0.5);
+                border-radius: 10px;
+                max-height: 70vh !important;
+                overflow-y: auto;
+                max-width: 80vw;
+                overflow-x: auto !important;
+                
+            }
         }
-
-        svg{
-            width: 70vw !important;
-        }
-
         @media screen and (max-width: 500px) {
-
             
             .navbar-icon {
                 display: block;
