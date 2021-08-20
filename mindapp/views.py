@@ -398,3 +398,17 @@ def graphy(request):
         graph.node(v,color='#A9EAA9',fillcolor='#A9EAA9', style='filled',tooltip=text, fontcolor='black')
     graph = graph.pipe().decode('utf-8')
     return render(request,"graphy.html",{ 'graph': graph, 'user': player })
+
+
+@login_required(login_url="/")
+def explore_paths(request):
+    player = Player.objects.get(user=request.user)
+    if player.completed_or_dead == False and not request.user.is_staff:
+        return redirect("/")
+    if isFrozen() and player.level > Config.objects.all().first().total_level:
+        situation = Situation.objects.get(situation_no=1)
+        player.current_sitn = 1
+        player.level = situation.level
+        player.save()
+        return redirect("/level")
+    return redirect("/")

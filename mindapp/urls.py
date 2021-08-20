@@ -10,6 +10,7 @@ urlpatterns = [
     path('rule', views.rule, name="rules_pre"),
     path('privacypolicy', views.privacy_policy_fb, name="privacypolicy"),
     path('adj', views.graph_and_player_path, name="adj"),
-    path('graph', views.graphy, name="graphy")
+    path('graph', views.graphy, name="graphy"),
+    path('explore', views.explore_paths, name='explore')
     # path('graphy', views.graphy, name="graphy"),
 ]
