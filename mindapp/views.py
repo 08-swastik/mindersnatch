@@ -113,7 +113,7 @@ def ans_post(request, cur_level, tot_level):
                 player.score += 1
 
                 # Activate the graph feature
-                # player.completed_or_dead = True
+                player.completed_or_dead = True
 
                 player.save()
                 updateLeaderboard()

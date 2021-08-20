@@ -8,3 +8,4 @@ venv/
 .vscode
 */migrations/*
 !*/migrations/__init__.py
+db.json

@@ -49,9 +49,11 @@
         <a type="button" href="{% url 'situation' %}" class="social-button nes-btn is-error" data-inline="true">
             Play Again
         </a>
-        <a type="button" href="{% url 'graphy' %}" class="social-button nes-btn" data-inline="true">
-            Show Graph
-        </a>
+        {% if user.completed_or_dead %}
+            <a type="button" href="{% url 'graphy' %}" class="social-button nes-btn" data-inline="true">
+                Show Graph
+            </a>
+        {% endif %}
     </div>
     <br>
 </div>
