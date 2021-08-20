@@ -128,7 +128,10 @@ def ans_post(request, cur_level, tot_level):
                 player.level = sitn.level
 
                 # Appending the next situation to the visited string
-                player.visited_nodes += f"{sitn.situation_no} "
+                visiteds = player.visited_nodes.split(" ")[0: -1]
+                
+                if str(sitn.situation_no) not in visiteds:
+                    player.visited_nodes += f"{sitn.situation_no} "
 
                 player.save()
                 updateLeaderboard()
@@ -165,7 +168,9 @@ def ans_post(request, cur_level, tot_level):
                 player.level = sitn.level
 
                 # Appending the next situation to the visited string
-                player.visited_nodes += f"{sitn.situation_no} "
+                visiteds = player.visited_nodes.split(" ")[0: -1]
+                if str(sitn.situation_no) not in visiteds:
+                    player.visited_nodes += f"{sitn.situation_no} "
 
                 player.save()
                 updateLeaderboard()
@@ -196,7 +201,9 @@ def ans_nonpost(request):
     try:
         player = Player.objects.get(user=request.user)
         sitn = Situation.objects.get(situation_no=player.current_sitn)
-        player.visited_nodes += f"{sitn.situation_no} "
+        visiteds = player.visited_nodes.split(" ")[0: -1]
+        if str(sitn.situation_no) not in visiteds:
+            player.visited_nodes += f"{sitn.situation_no} "
         player.save()
 
         if sitn.sub == True:
