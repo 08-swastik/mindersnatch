@@ -231,6 +231,7 @@ def index(request):
                 return render(request, 'index.html', {'user': player, 'frozen': frozen})
             except Exception as e:
                 print(e)
+                print("User not found")
                 return render(request, '404.html', {'message': "Try Logging Again!!"})
         return render(request, 'index.html')
     elif activeTime(request) == 1:
